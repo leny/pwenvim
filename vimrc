@@ -131,6 +131,7 @@ Plugin 'vim-scripts/smarty-syntax'
 
 call vundle#end() " end vundle plugins list
 filetype plugin on
+filetype indent on
 
 " ----- NERDTree configuration
 let NERDTreeShowHidden = 1
