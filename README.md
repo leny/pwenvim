@@ -17,3 +17,4 @@ Launch the following commands (you need to remove existing vim configuration fil
     ln -sfv ~/.pwenvim/vim ~/.vim
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
+    cd ~/.pwenvim/vim/bundle/YouCompleteMe && ./install.py
