@@ -49,6 +49,38 @@ colorscheme tomorrow-night-eighties
 " ----- MacVim Configuration
 set guifont=Fira\ Mono:h12
 
+" ----- Plugins configuration
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim " setup vundle
+call vundle#begin() " start vundle plugins list
+Plugin 'VundleVim/Vundle.vim' " Vundle needs to manage itself
+" --- Utils plugins
+Plugin 'scrooloose/nerdtree'
+Plugin 'itchyny/lightline.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'raimondi/delimitmate'
+Plugin 'vim-scripts/gitignore'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'justinmk/vim-sneak'
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+" --- Syntax plugins
+Plugin 'sheerun/vim-polyglot'
+Plugin 'vim-scripts/smarty-syntax'
+
+call vundle#end() " end vundle plugins list
+filetype plugin on
+filetype indent on
+
 " ----- Remap ; to : in normal mode (less misscases)
 nnoremap ; :
 
@@ -93,45 +125,9 @@ set sidescroll=1
 
 " ----- Add save shortcuts
 nmap <C-O> :w<CR> " nano-like save shortcut
-nmap <leader>w :w!<cr> " save with leader keystroke
 
 " ----- Reloads .vimrc
 nmap <Leader>s :source ~/.vimrc
-
-" ----- Remapping visual mode
-nmap <Leader><Leader> V
-
-" ----- Plugins configuration
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim " setup vundle
-call vundle#begin() " start vundle plugins list
-Plugin 'VundleVim/Vundle.vim' " Vundle needs to manage itself
-" --- Utils plugins
-Plugin 'scrooloose/nerdtree'
-Plugin 'itchyny/lightline.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'raimondi/delimitmate'
-Plugin 'vim-scripts/gitignore'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'terryma/vim-expand-region'
-Plugin 'justinmk/vim-sneak'
-Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-" --- Syntax plugins
-Plugin 'sheerun/vim-polyglot'
-Plugin 'vim-scripts/smarty-syntax'
-
-call vundle#end() " end vundle plugins list
-filetype plugin on
-filetype indent on
 
 " ----- NERDTree configuration
 let NERDTreeShowHidden = 1
