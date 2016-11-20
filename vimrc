@@ -119,7 +119,7 @@ set list
 nmap <leader>w :set wrap!<CR> " Togglewrap
 
 " ---- Scrolling
-set scrolloff=8 " Lines to keep above and below the cursor
+set scrolloff=4 " Lines to keep above and below the cursor
 set sidescrolloff=5
 set sidescroll=1
 
