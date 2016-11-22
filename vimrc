@@ -55,6 +55,7 @@ set rtp+=~/.vim/bundle/Vundle.vim " setup vundle
 call vundle#begin() " start vundle plugins list
 Plugin 'VundleVim/Vundle.vim' " Vundle needs to manage itself
 " --- Utils plugins
+Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
