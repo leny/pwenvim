@@ -136,6 +136,9 @@ let NERDTreeShowHidden = 1
 map <leader>kb :NERDTreeToggle<CR>
 map <leader>kf :NERDTreeFind<CR>
 
+" ----- Use ag in ack plugin
+let g:ackprg = 'ag --vimgrep'
+
 " ----- Lightline configuration
 " TODO: https://github.com/itchyny/lightline.vim#configuration-tutorial
 
