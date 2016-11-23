@@ -88,6 +88,7 @@ nnoremap ; :
 
 " ----- Quicker escape mode
 inoremap jj <ESC>
+inoremap kk <ESC>
 inoremap ;; ;<ESC>
 
 " ----- Remaps goto match
