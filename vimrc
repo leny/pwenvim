@@ -77,6 +77,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'kshenoy/vim-signature'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-scripts/smarty-syntax'
