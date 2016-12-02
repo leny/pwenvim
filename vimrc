@@ -42,6 +42,8 @@ set fileformats=unix,dos " Try unix line endings prior to dos
 :au FocusLost * :wa "Save on focus lost
 set ttyfast " Improve terminal redraw speed
 set foldlevel=250 " Unfold all at opening
+set noerrorbells " No error bell
+set termguicolors
 
 " ----- Color theme
 colorscheme tomorrow-night-eighties
@@ -103,6 +105,9 @@ nnoremap <right> <nop>
 
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
+
+" prevent entering ex mode accidentally
+nnoremap Q <Nop>
 
 " ----- Splits Configuration
 set splitbelow
