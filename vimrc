@@ -1,4 +1,4 @@
-" leny/pwendok - vimrc file
+" leny/pwenvim - vimrc file
 " started at 02/11/2016
 
 " Use Vim settings, rather then Vi settings (much better!).
@@ -6,7 +6,7 @@
 set nocompatible
 
 " ----- Leader configuration
-let mapleader="\<Space>" " cf. http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+let mapleader="," " cf. http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 
 " ----- Editor config
 set backspace=indent,eol,start " Allow backspacing everything in insert mode
@@ -43,13 +43,9 @@ set fileformats=unix,dos " Try unix line endings prior to dos
 set ttyfast " Improve terminal redraw speed
 set foldlevel=250 " Unfold all at opening
 set noerrorbells " No error bell
-set termguicolors
 
 " ----- Color theme
 colorscheme tomorrow-night-eighties
-
-" ----- MacVim Configuration
-set guifont=Fira\ Mono:h12
 
 " ----- Plugins configuration
 filetype off
