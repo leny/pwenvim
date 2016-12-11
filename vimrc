@@ -74,6 +74,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'kshenoy/vim-signature'
+Plugin 'henrik/CamelCaseMotion'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-scripts/smarty-syntax'
@@ -84,6 +85,9 @@ filetype indent on
 
 " ----- Remap ; to : in normal mode (less misscases)
 nnoremap ; :
+
+" Remap :W when I mean to :w.
+command! W w
 
 " ----- Quicker escape mode
 inoremap jj <ESC>
@@ -121,7 +125,7 @@ set listchars=tab:··,eol:¬ " Customize chars used for invisibles
 set list
 
 " ----- Toggle wrap
-nmap <leader>w :set wrap!<CR> " Togglewrap
+" nmap <leader>w :set wrap!<CR> " Togglewrap
 
 " ---- Scrolling
 set scrolloff=4 " Lines to keep above and below the cursor
