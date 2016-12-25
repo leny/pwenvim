@@ -75,6 +75,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'kshenoy/vim-signature'
 Plugin 'henrik/CamelCaseMotion'
+Plugin 'vim-syntastic/syntastic'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-scripts/smarty-syntax'
@@ -145,6 +146,25 @@ map <leader>kf :NERDTreeFind<CR>
 
 " ----- Use ag in ack plugin
 let g:ackprg = 'ag --vimgrep'
+
+" ----- Syntastic configuration
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+let g:syntastic_error_symbol = '⌦'
+highlight SyntasticErrorSign guifg=#f2777a
+highlight SpellBad guisp=#f2777a
+let g:syntastic_style_error_symbol = '⌦'
+highlight SyntasticStyleErrorSign guifg=#f2777a
+let g:syntastic_warning_symbol = '⌦'
+highlight SyntasticWarningSign guifg=#ffcc66
+highlight SpellCap guisp=#ffcc66
+let g:syntastic_style_warning_symbol = '⌦'
+highlight SyntasticStyleWarningSign guifg=#ffcc66
+
+let g:syntastic_javascript_checkers = ['eslint']
 
 " ----- Lightline configuration
 " TODO: https://github.com/itchyny/lightline.vim#configuration-tutorial
