@@ -167,10 +167,44 @@ highlight SpellCap guisp=#ffcc66
 let g:syntastic_style_warning_symbol = '⌦'
 highlight SyntasticStyleWarningSign guifg=#ffcc66
 
+let g:syntastic_stl_format = "%E{%e errors}%B{, }%W{%w warnings}"
+
 let g:syntastic_javascript_checkers = ['eslint']
 
 " ----- Lightline configuration
-" TODO: https://github.com/itchyny/lightline.vim#configuration-tutorial
+let g:lightline = {
+    \ 'active': {
+        \ 'left': [
+            \ [ 'mode', 'paste' ],
+            \ [ 'readonly', 'filename', 'modified' ]
+        \ ],
+        \ 'right': [
+            \ [ 'lineinfo' ],
+            \ [ 'percent' ],
+            \ [ 'filetype', 'syntastic' ]
+        \ ]
+    \ },
+    \ 'inactive': {
+        \ 'left': [
+            \ [ 'filename' ]
+        \ ],
+        \ 'right': [
+            \ [ 'lineinfo' ],
+            \ [ 'percent' ]
+        \ ]
+    \ },
+    \ 'component_expand' : {
+        \ 'syntastic': 'SyntasticStatuslineFlag'
+    \ },
+    \ 'separator': {
+        \ 'left': '',
+        \ 'right': ''
+    \ },
+    \ 'subseparator': {
+        \ 'left': '|',
+        \ 'right': '|'
+    \ }
+\ }
 
 " ----- EasyMotion configuration
 map <leader>e <plug>(easymotion-bd-w)
