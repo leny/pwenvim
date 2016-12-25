@@ -90,6 +90,9 @@ nnoremap ; :
 " Remap :W when I mean to :w.
 command! W w
 
+" This unsets the 'last search pattern' register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
 " ----- Quicker escape mode
 inoremap jj <ESC>
 inoremap kk <ESC>
