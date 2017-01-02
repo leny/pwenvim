@@ -207,8 +207,8 @@ let g:lightline = {
 \ }
 
 " ----- EasyMotion configuration
-map <leader>e <plug>(easymotion-bd-w)
-nmap <leader>e <plug>(easymotion-overwin-w)
+map <Leader>e <plug>(easymotion-bd-w)
+nmap <Leader>e <plug>(easymotion-overwin-w)
 
 " ----- Emmet configuration
 let g:user_emmet_leader_key = '<c-y>'
