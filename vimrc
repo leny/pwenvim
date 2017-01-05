@@ -221,7 +221,7 @@ autocmd FileType html,jade,css,sass,scss,stylus,smarty EmmetInstall
 " ----- ctrlp configuration
 let g:ctrlp_map = '<c-p>'
 map <c-p> :CtrlP<cr>
-map <c-b> :CtrlPBufTag<cr>
+map <c-b> :CtrlPMRU<cr>
 nnoremap <Leader>p :CtrlP<CR>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
