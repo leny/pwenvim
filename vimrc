@@ -77,6 +77,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'henrik/CamelCaseMotion'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'lambdatoast/elm.vim'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
 Plugin 'vim-scripts/smarty-syntax'
