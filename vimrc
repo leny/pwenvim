@@ -209,6 +209,9 @@ let g:lightline = {
     \ }
 \ }
 
+" refresh lightline when buffer is saved
+autocmd BufWritePost * call lightline#update()
+
 " ----- EasyMotion configuration
 map <Leader>e <plug>(easymotion-bd-w)
 nmap <Leader>e <plug>(easymotion-overwin-w)
