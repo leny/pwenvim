@@ -5,3 +5,5 @@
 set guifont=Fira\ Mono:h12
 set termguicolors
 set visualbell
+
+au! BufWritePost .gvimrc so %

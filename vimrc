@@ -251,3 +251,5 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " ----- Sneak
 let g:sneak#streak = 1
+
+au! BufWritePost .vimrc so %
