@@ -252,4 +252,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " ----- Sneak
 let g:sneak#streak = 1
 
+" ----- Fix 'go to mark' behavior with ` as a dead key
+nnoremap ' `
+
+" -----
+
 au! BufWritePost .vimrc so %
