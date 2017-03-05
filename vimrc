@@ -78,8 +78,11 @@ Plugin 'henrik/CamelCaseMotion'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'lambdatoast/elm.vim'
+Plugin 'pgilad/vim-react-proptypes-snippets'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
+Plugin 'elzr/vim-json'
+Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/smarty-syntax'
 
 call vundle#end() " end vundle plugins list
