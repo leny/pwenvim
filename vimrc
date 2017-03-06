@@ -132,7 +132,7 @@ set listchars=trail:·,tab:··,eol:¬,nbsp:░ " Customize chars used for invis
 set list
 
 " ----- Toggle wrap
-" nmap <leader>w :set wrap!<CR> " Togglewrap
+nmap <leader>w :set wrap!<CR> " Togglewrap
 
 " ---- Scrolling
 set scrolloff=4 " Lines to keep above and below the cursor
@@ -142,7 +142,16 @@ set sidescroll=1
 " ----- Add save shortcuts
 nmap <C-O> :w<CR> " nano-like save shortcut
 
-" ----- Reloads .vimrc
+" ----- Leader key shortcuts
+" --- Copy/paste from system clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" --- Reloads .vimrc
 nmap <Leader>s :source ~/.vimrc
 
 " ----- NERDTree configuration
@@ -227,7 +236,7 @@ autocmd FileType html,jade,css,sass,scss,stylus,smarty EmmetInstall
 let g:ctrlp_map = '<c-p>'
 map <c-p> :CtrlP<cr>
 map <c-b> :CtrlPMRU<cr>
-nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>b :CtrlPMRU<CR>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " ----- whitespace cleaning
