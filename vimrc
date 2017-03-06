@@ -18,8 +18,6 @@ set incsearch " Incremental search
 set hlsearch " Highlight search result
 set hidden " Hide buffers instead of closing
 set number " Show line numbers
-set smartindent " Use smartindenting
-set autoindent " Copy indent from current line when starting new line
 set tabstop=4 " Tabs are 4 spaces
 set softtabstop=4 " Soft tabs are 4 spaces
 set shiftwidth=4 " Indenting matches tabs
@@ -46,6 +44,7 @@ set noerrorbells " No error bell
 
 " ----- Switch relative/absolute line numbers on focus/blur
 :au WinLeave * :set norelativenumber
+:au BufEnter * :set relativenumber
 :au WinEnter * :set relativenumber
 :au InsertEnter * :set norelativenumber
 :au InsertLeave * :set relativenumber
@@ -92,6 +91,8 @@ Plugin 'vim-scripts/smarty-syntax'
 call vundle#end() " end vundle plugins list
 filetype plugin on
 filetype indent on
+set smartindent " Use smartindenting
+set autoindent " Copy indent from current line when starting new line
 
 " Remap :W when I mean to :w.
 command! W w
