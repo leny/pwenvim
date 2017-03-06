@@ -44,6 +44,13 @@ set ttyfast " Improve terminal redraw speed
 set foldlevel=250 " Unfold all at opening
 set noerrorbells " No error bell
 
+" ----- Switch relative/absolute line numbers on focus/blur
+:au WinLeave * :set norelativenumber
+:au WinEnter * :set relativenumber
+:au InsertEnter * :set norelativenumber
+:au InsertLeave * :set relativenumber
+
+
 " ----- Color theme
 colorscheme tomorrow-night-eighties
 
