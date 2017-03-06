@@ -89,9 +89,6 @@ call vundle#end() " end vundle plugins list
 filetype plugin on
 filetype indent on
 
-" ----- Remap ; to : in normal mode (less misscases)
-nnoremap ; :
-
 " Remap :W when I mean to :w.
 command! W w
 
