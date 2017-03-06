@@ -50,7 +50,6 @@ set noerrorbells " No error bell
 :au InsertEnter * :set norelativenumber
 :au InsertLeave * :set relativenumber
 
-
 " ----- Color theme
 colorscheme tomorrow-night-eighties
 
@@ -63,7 +62,6 @@ Plugin 'VundleVim/Vundle.vim' " Vundle needs to manage itself
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -74,7 +72,6 @@ Plugin 'vim-scripts/gitignore'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'terryma/vim-expand-region'
-Plugin 'justinmk/vim-sneak'
 Plugin 'ervandew/supertab'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
@@ -226,11 +223,7 @@ let g:lightline = {
 \ }
 
 " refresh lightline when buffer is saved
-autocmd BufWritePre * call lightline#update()
-
-" ----- EasyMotion configuration
-map <Leader>e <plug>(easymotion-bd-w)
-nmap <Leader>e <plug>(easymotion-overwin-w)
+autocmd BufWritePost * call lightline#update()
 
 " ----- Emmet configuration
 let g:user_emmet_leader_key = '<c-y>'
@@ -264,9 +257,6 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" ----- Sneak
-let g:sneak#streak = 1
 
 " ----- Fix 'go to mark' behavior with ` as a dead key
 nnoremap ' `
