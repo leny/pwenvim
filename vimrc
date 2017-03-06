@@ -6,7 +6,7 @@
 set nocompatible
 
 " ----- Leader configuration
-let mapleader="," " cf. http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+let mapleader="\<Space>" " cf. http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 
 " ----- Editor config
 set backspace=indent,eol,start " Allow backspacing everything in insert mode
