@@ -94,6 +94,9 @@ set autoindent " Copy indent from current line when starting new line
 " Remap :W when I mean to :w.
 command! W w
 
+" Remap :w!! to 'save with sudo'
+cmap w!! w !sudo tee % > /dev/null
+
 " This unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
