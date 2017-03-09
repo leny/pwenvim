@@ -80,6 +80,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'henrik/CamelCaseMotion'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plugin 'pgilad/vim-react-proptypes-snippets'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
