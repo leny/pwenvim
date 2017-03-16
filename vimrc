@@ -42,12 +42,19 @@ set ttyfast " Improve terminal redraw speed
 set foldlevel=250 " Unfold all at opening
 set noerrorbells " No error bell
 
+" ----- Highlight cursorline on active buffer
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
+
 " ----- Switch relative/absolute line numbers on focus/blur
-:au WinLeave * :set norelativenumber
-:au BufEnter * :set relativenumber
-:au WinEnter * :set relativenumber
-:au InsertEnter * :set norelativenumber
-:au InsertLeave * :set relativenumber
+augroup RelativeNumber
+    au!
+    au WinLeave,InsertEnter * setlocal norelativenumber
+    au BufEnter,WinEnter,InsertLeave * setlocal relativenumber
+augroup END
 
 " ----- Color theme
 colorscheme tomorrow-night-eighties
