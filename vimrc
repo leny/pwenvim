@@ -42,20 +42,6 @@ set ttyfast " Improve terminal redraw speed
 set foldlevel=250 " Unfold all at opening
 set noerrorbells " No error bell
 
-" ----- Highlight cursorline on active buffer
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
-
-" ----- Switch relative/absolute line numbers on focus/blur
-augroup RelativeNumber
-    au!
-    au WinLeave,InsertEnter * setlocal norelativenumber
-    au BufEnter,WinEnter,InsertLeave * setlocal relativenumber
-augroup END
-
 " ----- Color theme
 colorscheme tomorrow-night-eighties
 
@@ -99,6 +85,20 @@ filetype indent on
 set smartindent " Use smartindenting
 set autoindent " Copy indent from current line when starting new line
 
+" ----- Highlight cursorline on active buffer
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
+
+" ----- Switch relative/absolute line numbers on focus/blur
+augroup RelativeNumber
+    au!
+    au WinLeave,InsertEnter * setlocal norelativenumber
+    au BufEnter,WinEnter,InsertLeave * setlocal relativenumber
+augroup END
+
 " Remap :W when I mean to :w.
 command! W w
 
@@ -120,14 +120,26 @@ vnoremap <tab> %
 " ----- Disable arrows in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+
+" ---- Use arrows to move stuffs in normal/visual mode
+nmap <left> <<
+nmap <right> >>
+vmap <left> <gv
+vmap <right> >gv
 
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " prevent entering ex mode accidentally
 nnoremap Q <Nop>
+
+" disable K man command
+nnoremap K <nop>
+
+" Go to previous file
+nnoremap <leader><leader> <c-^>
 
 " ----- Splits Configuration
 set splitbelow
