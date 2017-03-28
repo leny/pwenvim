@@ -77,6 +77,7 @@ Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plugin 'pgilad/vim-react-proptypes-snippets'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
+Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/smarty-syntax'
 
 call vundle#end() " end vundle plugins list
@@ -84,6 +85,9 @@ filetype plugin on
 filetype indent on
 set smartindent " Use smartindenting
 set autoindent " Copy indent from current line when starting new line
+
+" ----- vim-jsx config
+let g:jsx_ext_required = 0
 
 " ----- Highlight cursorline on active buffer
 augroup CursorLine
