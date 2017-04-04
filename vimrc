@@ -33,7 +33,6 @@ set nrformats=hex,alpha " Increment hex and alpha with numeric command
 set wildmenu " Display autocomplete options
 set nowrap " Don't wrap long lines
 set linebreak " Wrap lines at convenient points
-syntax on " Enable syntax highlighting
 set autoread " Reload files changed outside vim
 set fileformat=unix " Use unix line endings
 set fileformats=unix,dos " Try unix line endings prior to dos
@@ -82,6 +81,7 @@ Plugin 'vim-scripts/smarty-syntax'
 call vundle#end() " end vundle plugins list
 filetype plugin on
 filetype indent on
+syntax on
 set smartindent " Use smartindenting
 set autoindent " Copy indent from current line when starting new line
 
