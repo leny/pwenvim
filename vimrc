@@ -77,7 +77,6 @@ Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plugin 'pgilad/vim-react-proptypes-snippets'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
-Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/smarty-syntax'
 
 call vundle#end() " end vundle plugins list
