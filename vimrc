@@ -23,7 +23,7 @@ set softtabstop=4 " Soft tabs are 4 spaces
 set shiftwidth=4 " Indenting matches tabs
 set expandtab " Expand tabs into spaces
 set laststatus=2 " Use two lines for status
-set foldmethod=indent " Use indent code folding
+set foldmethod=syntax " Use syntax code folding
 set encoding=utf-8 " Use UTF-8 encoding by default
 set ignorecase " Ignore case on searching…
 set smartcase " …unless the search has capitals in it
