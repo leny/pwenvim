@@ -103,6 +103,13 @@ augroup RelativeNumber
     au BufEnter,WinEnter,InsertLeave * setlocal relativenumber
 augroup END
 
+" ----- Preserve folding while creating folds in insert mode
+augroup PreserveFolding
+    au!
+    au InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+    au InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+augroup END
+
 " Remap :W when I mean to :w.
 command! W w
 
