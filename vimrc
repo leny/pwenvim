@@ -122,6 +122,7 @@ nnoremap <CR> :noh<CR><CR>
 " ----- Quicker escape mode
 inoremap jj <ESC>
 inoremap kk <ESC>
+inoremap kj <ESC>
 inoremap ;; ;<ESC>
 
 " ----- Remaps goto match
@@ -133,6 +134,15 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 " nnoremap <left> <nop>
 " nnoremap <right> <nop>
+
+" ----- Disable Arrow keys in Insert mode
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" ----- Handle double-space in Insert mode
+inoremap <space><space> <space><space><left>
 
 " ---- Use arrows to move stuffs in normal/visual mode
 nmap <left> <<
