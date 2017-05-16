@@ -304,6 +304,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " ----- Fix 'go to mark' behavior with ` as a dead key
 nnoremap ' `
 
+" ----- Negate expression
+
+nnoremap !! F<space>a!<esc>
+
 " -----
 
 au! BufWritePost .vimrc so %
