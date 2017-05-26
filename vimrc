@@ -304,9 +304,11 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " ----- Fix 'go to mark' behavior with ` as a dead key
 nnoremap ' `
 
-" ----- Negate expression
+" ----- Misc expressions
 
-nnoremap !! F<space>a!<esc>
+nnoremap !! Bi!<esc>
+nnoremap ;; A;<esc>
+nnoremap ,, A,<esc>
 
 " -----
 
