@@ -159,9 +159,6 @@ nnoremap Q <Nop>
 " disable K man command
 nnoremap K <nop>
 
-" Go to previous file
-nnoremap <leader><leader> <c-^>
-
 " ----- Splits Configuration
 set splitbelow
 set splitright
@@ -306,9 +303,9 @@ nnoremap ' `
 
 " ----- Misc expressions
 
-nnoremap !! Bi!<esc>
-nnoremap ;; A;<esc>
-nnoremap ,, A,<esc>
+nnoremap <leader><leader>! Bi!<esc>
+nnoremap <leader><leader>; A;<esc>
+nnoremap <leader><leader>, A,<esc>
 
 " -----
 
