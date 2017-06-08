@@ -70,7 +70,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'kshenoy/vim-signature'
 Plugin 'henrik/CamelCaseMotion'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'ap/vim-css-color'
 Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
@@ -205,26 +205,27 @@ map <leader>kf :NERDTreeFind<CR>
 " ----- Use ag in ack plugin
 let g:ackprg = 'ag --vimgrep'
 
-" ----- Syntastic configuration
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+" ----- ALE (linter) configuration
 
-let g:syntastic_error_symbol = '⌦'
-highlight SyntasticErrorSign guifg=#f2777a
+let g:ale_sign_error = '⌦'
+highlight ALEErrorSign guifg=#f2777a
 highlight SpellBad guisp=#f2777a
-let g:syntastic_style_error_symbol = '⌦'
-highlight SyntasticStyleErrorSign guifg=#f2777a
-let g:syntastic_warning_symbol = '⌦'
-highlight SyntasticWarningSign guifg=#ffcc66
+let g:ale_sign_warning = '⌦'
+highlight ALEWarningSign guifg=#ffcc66
 highlight SpellCap guisp=#ffcc66
-let g:syntastic_style_warning_symbol = '⌦'
-highlight SyntasticStyleWarningSign guifg=#ffcc66
 
-let g:syntastic_stl_format = "%E{%e errors}%B{, }%W{%w warnings}"
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
 
-let g:syntastic_javascript_checkers = ['eslint']
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
 
 " ----- Lightline configuration
 let g:lightline = {
@@ -236,7 +237,7 @@ let g:lightline = {
         \ 'right': [
             \ [ 'lineinfo' ],
             \ [ 'percent' ],
-            \ [ 'filetype', 'syntastic' ]
+            \ [ 'filetype', 'ale' ]
         \ ]
     \ },
     \ 'inactive': {
@@ -249,7 +250,7 @@ let g:lightline = {
         \ ]
     \ },
     \ 'component_expand' : {
-        \ 'syntastic': 'SyntasticStatuslineFlag'
+        \ 'ale': 'LinterStatus'
     \ },
     \ 'separator': {
         \ 'left': '',
