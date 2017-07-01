@@ -308,6 +308,10 @@ nnoremap <leader><leader>! Bi!<esc>
 nnoremap <leader><leader>; A;<esc>
 nnoremap <leader><leader>, A,<esc>
 
+" ----- Search selected text in visual mode
+
+vnoremap // y/\V<C-R>"<CR>
+
 " -----
 
 au! BufWritePost .vimrc so %
