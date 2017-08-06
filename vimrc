@@ -5,6 +5,39 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" ----- Plugins configuration
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim " setup vundle
+call vundle#begin() " start vundle plugins list
+Plugin 'VundleVim/Vundle.vim' " Vundle needs to manage itself
+" --- Utils plugins
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'raimondi/delimitmate'
+Plugin 'vim-scripts/gitignore'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'kshenoy/vim-signature'
+Plugin 'w0rp/ale'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
+Plugin 'pgilad/vim-react-proptypes-snippets'
+Plugin 'takac/vim-hardtime'
+" --- Syntax plugins
+Plugin 'sheerun/vim-polyglot'
+
+call vundle#end() " end vundle plugins list
+
 " ----- Leader configuration
 let mapleader="\<Space>" " cf. http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 
@@ -45,38 +78,6 @@ set noshowmode " hide mode in command line (shown in airline)
 " ----- Color theme
 colorscheme tomorrow-night-eighties
 
-" ----- Plugins configuration
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim " setup vundle
-call vundle#begin() " start vundle plugins list
-Plugin 'VundleVim/Vundle.vim' " Vundle needs to manage itself
-" --- Utils plugins
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'raimondi/delimitmate'
-Plugin 'vim-scripts/gitignore'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'terryma/vim-expand-region'
-Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'kshenoy/vim-signature'
-Plugin 'w0rp/ale'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
-Plugin 'pgilad/vim-react-proptypes-snippets'
-Plugin 'takac/vim-hardtime'
-" --- Syntax plugins
-Plugin 'sheerun/vim-polyglot'
-
-call vundle#end() " end vundle plugins list
 filetype plugin on
 filetype indent on
 syntax on
