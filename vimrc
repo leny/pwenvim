@@ -56,7 +56,6 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
 Plugin 'vim-scripts/gitignore'
@@ -64,20 +63,16 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'ervandew/supertab'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'kshenoy/vim-signature'
-Plugin 'henrik/CamelCaseMotion'
 Plugin 'w0rp/ale'
 Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'ap/vim-css-color'
 Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plugin 'pgilad/vim-react-proptypes-snippets'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
-Plugin 'vim-scripts/smarty-syntax'
 
 call vundle#end() " end vundle plugins list
 filetype plugin on
@@ -132,8 +127,8 @@ vnoremap <tab> %
 " ----- Disable arrows in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
+" nnoremap <left> <nop> " (remapped below)
+" nnoremap <right> <nop> " (remapped below)
 
 " ----- Disable Arrow keys in Insert mode
 inoremap <up> <nop>
@@ -181,9 +176,6 @@ nmap <leader>w :set wrap!<CR> " Togglewrap
 set scrolloff=4 " Lines to keep above and below the cursor
 set sidescrolloff=5
 set sidescroll=1
-
-" ----- Add save shortcuts
-nmap <C-O> :w<CR> " nano-like save shortcut
 
 " ----- Leader key shortcuts
 " --- Copy/paste from system clipboard
@@ -264,6 +256,7 @@ let g:lightline = {
 
 " refresh lightline when buffer is saved
 autocmd BufWritePost * call lightline#update()
+autocmd User ALELint call lightline#update()
 
 " ----- Emmet configuration
 let g:user_emmet_leader_key = '<c-y>'
