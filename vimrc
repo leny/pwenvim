@@ -72,6 +72,7 @@ Plugin 'w0rp/ale'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plugin 'pgilad/vim-react-proptypes-snippets'
+Plugin 'takac/vim-hardtime'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
 
@@ -301,6 +302,14 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" ----- Hardtime
+let g:hardtime_default_on = 1
+let g:list_of_normal_keys = ["h", "j", "k", "l"]
+let g:list_of_visual_keys = ["h", "j", "k", "l"]
+let g:list_of_insert_keys = []
+let g:hardtime_timeout = 500
+let g:hardtime_ignore_quickfix = 1
 
 " ----- Fix 'go to mark' behavior with ` as a dead key
 nnoremap ' `
