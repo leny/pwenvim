@@ -40,6 +40,7 @@ set fileformats=unix,dos " Try unix line endings prior to dos
 set ttyfast " Improve terminal redraw speed
 set foldlevel=250 " Unfold all at opening
 set noerrorbells " No error bell
+set noshowmode " hide mode in command line (shown in airline)
 
 " ----- Color theme
 colorscheme tomorrow-night-eighties
@@ -199,24 +200,34 @@ let g:ackprg = 'ag --vimgrep'
 
 " ----- ALE (linter) configuration
 
-let g:ale_sign_error = '⌦'
+let g:ale_sign_error = '●'
 highlight ALEErrorSign guifg=#f2777a
 highlight SpellBad guisp=#f2777a
-let g:ale_sign_warning = '⌦'
+let g:ale_sign_warning = '◇'
 highlight ALEWarningSign guifg=#ffcc66
 highlight SpellCap guisp=#ffcc66
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
 
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
+    if l:counts.total == 0
+        return '✓'
+    endif
 
-    return l:counts.total == 0 ? 'OK' : printf(
-    \   '%dW %dE',
-    \   all_non_errors,
-    \   all_errors
-    \)
+    let l:errors = l:counts.error + l:counts.style_error
+    let l:warnings = l:counts.total - l:errors
+
+    if l:errors > 0 && l:warnings > 0
+        return '◇ ●'
+    endif
+
+    if l:errors > 0
+        return '●'
+    endif
+
+    if l:warnings > 0
+        return '◇'
+    endif
 endfunction
 
 " ----- Lightline configuration
@@ -228,8 +239,8 @@ let g:lightline = {
         \ ],
         \ 'right': [
             \ [ 'lineinfo' ],
-            \ [ 'percent' ],
-            \ [ 'filetype', 'ale' ]
+            \ [ 'ale' ],
+            \ [ 'filetype' ],
         \ ]
     \ },
     \ 'inactive': {
@@ -238,7 +249,6 @@ let g:lightline = {
         \ ],
         \ 'right': [
             \ [ 'lineinfo' ],
-            \ [ 'percent' ]
         \ ]
     \ },
     \ 'component_expand' : {
