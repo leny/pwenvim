@@ -250,7 +250,8 @@ let g:lightline = {
             \ [ 'filename' ]
         \ ],
         \ 'right': [
-            \ [ 'lineinfo' ],
+            \ [ 'filetype' ],
+            \ [ 'ale' ],
         \ ]
     \ },
     \ 'component_expand' : {
