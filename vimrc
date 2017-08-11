@@ -251,7 +251,6 @@ let g:lightline = {
         \ ],
         \ 'right': [
             \ [ 'filetype' ],
-            \ [ 'ale' ],
         \ ]
     \ },
     \ 'component_expand' : {
