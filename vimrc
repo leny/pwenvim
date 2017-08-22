@@ -15,7 +15,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
@@ -270,14 +269,6 @@ let g:lightline = {
 " refresh lightline when buffer is saved
 autocmd BufWritePost * call lightline#update()
 autocmd User ALELint call lightline#update()
-
-" ----- Emmet configuration
-let g:user_emmet_leader_key = '<c-y>'
-let g:user_emmet_prev_key = '<c-j>'
-let g:user_emmet_next_key = '<c-k>'
-let g:user_emmet_settings={'javascript.jsx': {'extends':'jsx'}}
-imap <expr> <c-e> emmet#expandAbbrIntelligent("\<tab>")
-autocmd FileType html,jade,css,sass,scss,stylus,smarty,javascript.jsx EmmetInstall
 
 " ----- ctrlp configuration
 let g:ctrlp_map = '<c-p>'
