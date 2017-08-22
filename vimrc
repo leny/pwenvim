@@ -210,7 +210,7 @@ highlight ALEWarningSign guifg=#ffcc66
 highlight SpellCap guisp=#ffcc66
 
 function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:counts = ale#statusline#Count(winbufnr('$'))
 
     if l:counts.total == 0
         return '✓'
@@ -250,10 +250,11 @@ let g:lightline = {
             \ [ 'filename' ]
         \ ],
         \ 'right': [
+            \ [ 'ale' ],
             \ [ 'filetype' ],
         \ ]
     \ },
-    \ 'component_expand' : {
+    \ 'component_function' : {
         \ 'ale': 'LinterStatus'
     \ },
     \ 'separator': {
