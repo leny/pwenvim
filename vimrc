@@ -75,13 +75,14 @@ set noerrorbells " No error bell
 set noshowmode " hide mode in command line (shown in airline)
 
 " ----- Color theme
-colorscheme tomorrow-night-eighties
 
 filetype plugin on
 filetype indent on
 syntax on
 set smartindent " Use smartindenting
 set autoindent " Copy indent from current line when starting new line
+
+colorscheme tomorrow-night-eighties
 
 " ----- vim-jsx config
 let g:jsx_ext_required = 0
@@ -201,6 +202,11 @@ let g:ackprg = 'ag --vimgrep'
 
 " ----- ALE (linter) configuration
 
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--tab-width 4 --trailing-comma all --no-bracket-spacing --jsx-bracket-same-line'
+
 let g:ale_sign_error = '●'
 highlight ALEErrorSign guifg=#f2777a
 highlight SpellBad guisp=#f2777a
@@ -249,8 +255,7 @@ let g:lightline = {
             \ [ 'filename' ]
         \ ],
         \ 'right': [
-            \ [ 'ale' ],
-            \ [ 'filetype' ],
+            \ [ 'ale' ]
         \ ]
     \ },
     \ 'component_function' : {
