@@ -202,11 +202,6 @@ let g:ackprg = 'ag --vimgrep'
 
 " ----- ALE (linter) configuration
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_options = '--tab-width 4 --trailing-comma all --no-bracket-spacing --jsx-bracket-same-line'
-
 let g:ale_sign_error = '●'
 highlight ALEErrorSign guifg=#f2777a
 highlight SpellBad guisp=#f2777a
