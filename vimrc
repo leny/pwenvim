@@ -73,6 +73,7 @@ set ttyfast " Improve terminal redraw speed
 set foldlevel=250 " Unfold all at opening
 set noerrorbells " No error bell
 set noshowmode " hide mode in command line (shown in airline)
+set updatetime=2000 " delay to trigger cursor inactivity event
 
 " ----- Color theme
 
@@ -99,6 +100,12 @@ augroup RelativeNumber
     au!
     au WinLeave,InsertEnter * setlocal norelativenumber
     au BufEnter,WinEnter,InsertLeave * setlocal relativenumber
+augroup END
+
+" ----- Update
+augroup CheckTime
+    au!
+    au CursorHold,CursorHoldI * checktime
 augroup END
 
 " ----- Preserve folding while creating folds in insert mode
