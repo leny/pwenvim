@@ -34,6 +34,7 @@ Plugin 'pgilad/vim-react-proptypes-snippets'
 Plugin 'takac/vim-hardtime'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 
 call vundle#end() " end vundle plugins list
 
