@@ -5,6 +5,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set shell=/bin/bash
+
 " ----- Plugins configuration
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim " setup vundle
