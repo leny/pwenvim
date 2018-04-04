@@ -34,6 +34,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plugin 'pgilad/vim-react-proptypes-snippets'
 Plugin 'takac/vim-hardtime'
+Plugin 'jszakmeister/vim-togglecursor'
 " --- Syntax plugins
 Plugin 'sheerun/vim-polyglot'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
@@ -87,7 +88,10 @@ set smartindent " Use smartindenting
 set autoindent " Copy indent from current line when starting new line
 
 colorscheme tomorrow-night-eighties
-" set termguicolors
+set termguicolors
+
+" ----- escape sequence timeout - cf. https://github.com/wincent/terminus/issues/9#issuecomment-363775121
+set ttimeoutlen=0
 
 " ----- vim-jsx config
 let g:jsx_ext_required = 0
