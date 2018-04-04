@@ -87,7 +87,7 @@ set smartindent " Use smartindenting
 set autoindent " Copy indent from current line when starting new line
 
 colorscheme tomorrow-night-eighties
-set termguicolors
+" set termguicolors
 
 " ----- vim-jsx config
 let g:jsx_ext_required = 0
