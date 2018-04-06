@@ -73,6 +73,7 @@ set autoread " Reload files changed outside vim
 set fileformat=unix " Use unix line endings
 set fileformats=unix,dos " Try unix line endings prior to dos
 :au FocusLost * :wa "Save on focus lost
+:au BufLeave * :wa "Save on focus lost
 set ttyfast " Improve terminal redraw speed
 set foldlevel=250 " Unfold all at opening
 set noerrorbells " No error bell
