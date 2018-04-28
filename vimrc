@@ -263,7 +263,7 @@ let g:lightline = {
     \ },
     \ 'inactive': {
         \ 'left': [
-            \ [ 'filename' ]
+            \ [ 'filename', 'modified' ]
         \ ],
         \ 'right': [
             \ [ 'ale' ]
