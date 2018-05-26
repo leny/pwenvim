@@ -333,6 +333,10 @@ nnoremap <leader><leader>, A,<esc>
 
 vnoremap // y/\V<C-R>"<CR>
 
+" ----- Prettier
+
+nnoremap gp :silent %!npx prettier --stdin<CR>
+
 " -----
 
 au! BufWritePost .vimrc so %
