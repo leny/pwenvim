@@ -24,6 +24,7 @@ Plugin 'vim-scripts/gitignore'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'terryma/vim-expand-region'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
@@ -93,6 +94,9 @@ set termguicolors
 
 " ----- escape sequence timeout - cf. https://github.com/wincent/terminus/issues/9#issuecomment-363775121
 set ttimeoutlen=0
+
+" ----- vim-javascript config
+let g:javascript_plugin_flow = 1
 
 " ----- vim-jsx config
 let g:jsx_ext_required = 0
